@@ -1,0 +1,16 @@
+{
+  "private": true,
+  "devDependencies": {
+    "gulp": "^3.8.8",
+    "gulp-minify-css": "^1.2.1"
+  },
+  "dependencies": {
+    "babel-runtime": "^5.8.34",
+    "vue-hot-reload-api": "^1.2.1",
+    "vueify-insert-css": "^1.0.0",
+    "bootstrap": "^3.3.5",
+    "font-awesome": "^4.4.0",
+    "jquery": "^2.1.4",
+    "laravel-elixir": "^3.0.0"
+  }
+}

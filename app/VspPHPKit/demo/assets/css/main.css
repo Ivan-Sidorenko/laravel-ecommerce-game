@@ -1,0 +1,338 @@
+body
+{
+    margin: 10px auto 20px auto;
+    width: 960px;
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+input
+{
+    font-size: 13px;
+}
+
+img
+{
+    border: 0;
+}
+
+form
+{
+    padding: 0px;
+    margin: 0px;
+}
+
+p
+{
+    color:  #666666;
+}
+
+ul
+{
+    color:  #666666;
+}
+
+li
+{
+    margin-bottom: 10px;
+}
+
+td
+{
+    color:  #666666;
+}
+
+a
+{
+    color:  #006699;
+}
+
+a:link
+{
+    text-decoration: none;
+}
+a:visted
+{
+    text-decoration: none;
+}
+a:hover
+{
+    text-decoration: underline;
+}
+
+#loginInfo {
+    text-align: left;
+}
+
+#pageContainer
+{
+    width: 100%;
+    float: left;
+    clear: left;
+}
+
+#pageHeader
+{
+    width: 100%;
+    float: left;
+    clear: left;
+    margin: 20px 0 20px 0;
+}
+
+#topBar {
+    margin-bottom: 10px;
+    background: #888;
+    color: white;
+    font-size: 12px;
+}
+#topBar dl {
+    display: inline;
+    padding: 0px 5px;
+}
+#topBar dt {
+    display: inline;
+    padding: 0;
+    margin: 0 5px 0 0;
+}
+#topBar dd {
+    display: inline;
+    padding: 0;
+    margin: 0 15px 0 0;
+}
+
+#content
+{
+    width: 100%;
+    float: left;
+    clear: left;
+    color:  #666666;
+}
+#contentHeader
+{
+    width: 100%;
+    clear: left;
+    padding:0;
+    margin: 10px 0 10px 0;
+    color:#007F64;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+
+#logo {
+    float:left;
+}
+
+#siteTitle
+{
+    float: right;
+}
+
+.subheader
+{
+    clear: left;
+    background-image: url(../images/yellowBlob.png);
+    background-repeat: no-repeat;
+    background-position: 0px 22px;
+    padding: 20px 0px 8px 25px;
+    font-size: 18px;
+    color: #E98300;
+}
+
+.errorheader
+{
+    clear: left;
+    background-image: url(../images/redGrad.jpg);
+    background-repeat: repeat-x;
+    background-position: top left;
+    text-align: center;
+    margin-top: 20px;
+    padding: 12px;
+    border: #daa7a6 1px solid;
+    color: red;
+    font-weight: bold;
+}
+.infoheader
+{
+    background-image: url(../images/greenGrad.jpg);
+    background-repeat: repeat-x;
+    background-position: top left;
+    text-align: center;
+    margin-top: 20px;
+    padding: 12px;
+    border: #b1d0b1 1px solid;
+}
+.code
+{
+    font-family: courier, Arial, Helvetica;
+    font-size: 11px;
+    color:  #666666;
+}
+
+.greybar
+{
+    background-color:#cbcbcb;
+    background-position:center;
+    background-image: url(../images/greyGlass.gif);
+    width: 865px;
+}
+
+.greyBoxTop
+{
+    background: transparent url(../images/greyBorderTop.gif);
+    background-repeat: no-repeat;
+    background-position: top left;
+    padding-top: 5px;
+    padding-bottom: 6px;
+}
+.greyBoxBottom
+{
+    background: transparent url(../images/greyBorderBottom.gif);
+    background-repeat: no-repeat;
+    background-position: bottom left;
+}
+.greyBoxSides
+{
+    background: transparent url(../images/greyBorderSides.gif);
+    background-repeat: repeat-y;
+    background-position: top left;
+}
+
+#resourceBar {
+    float: left;
+    clear: left;
+    width: 100%;
+    color: #675C53;
+    font-size: 12px;
+    margin: 10px 0 20px 0;
+}
+#resourceBar a {
+   color: #675C53;
+}
+#resourceBar h3 {
+    font-size: 14px;
+    font-weight: normal;
+}
+#resourceBar ul {
+    margin: 10px 0 0 0;
+    padding: 0;
+}
+#resourceBar li
+{
+    float: left;
+    width: 300px;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+#resourceBar li a {
+    float: left;
+    width: 250px;
+}
+#resourceBar li img {
+    float: left;
+    width: 30px;
+    margin: 0 12px 10px 0;
+}
+
+
+
+.warning {
+    color: #CC0000;
+    font-weight: bold;
+}
+
+.formTable
+{
+    width: 100%;
+    border: 0px none;
+    border-collapse: collapse;
+}
+
+.formTable td
+{
+    border: 0;
+    /*border-bottom: 1px solid #d3d3d3;*/
+    padding: 3px 10px 6px 3px;
+    vertical-align: top;
+}
+
+.formFooter
+{
+    margin: 12px 0px 0px 0px;
+}
+
+.fieldLabel
+{
+    color: #575C53;
+    font-weight: normal;
+}
+
+.fieldData
+{
+
+}
+
+.fieldLabel .warning
+{
+    padding-right: 2px;
+}
+
+.inputBoxDisable
+{
+    background-color: #DDDDDD;
+    border: 1px solid #999999;
+}
+.inputBoxEnable
+{
+    background-color: #FFFFFF;
+    border: 1px solid #999999;
+}
+
+.greyHzShadeBar {
+    clear: left;
+    height: 20px;
+    background-image: url(../images/greyGrad.png);
+    background-repeat: repeat-x;
+    background-position: bottom left;
+}
+
+.captured {
+    font-size: 10px;
+    color:  #666666;
+}
+.orderStatusMessage {
+    font-size: 10px;
+    word-wrap: break-word;
+}
+.vendorTxCode {
+    font-size: 10px;
+}
+.addressCheckDetails {
+    font-size: 10px;
+}
+.protocolMessage {
+    word-wrap:break-word; word-break: break-all;
+}
+table.adminOrders {
+    font-size: 12px;
+}
+td.orderActions {
+    width: 50px;
+}
+
+div.selectCheckout { }
+
+div.basket { }
+.basket th.img { padding-left: 20px; }
+.basket td { padding: 15px 0 0 0; margin: 0; }
+.basket .img { text-align: left; }
+.basket .name { text-align: left; }
+.basket .price { text-align: right; }
+.basket .qty { text-align: right;}
+
+div.deleteAll { clear: both; float: left; margin: 20px 0; }
+
+div.loginForm .errorheader { margin: 10px 0; float: left; width: 100%;}
+
+.adminCustomers { width: 50%; }

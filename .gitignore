@@ -1,0 +1,12 @@
+/vendor
+/node_modules
+Homestead.yaml
+Homestead.json
+.env
+.codekit-cache
+/public/build
+public/images/products
+/public/assets/css
+/public/assets/js
+/npm-debug.log
+/.idea

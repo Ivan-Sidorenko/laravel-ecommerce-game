@@ -1,0 +1,265 @@
+@width-treshold: 1000px;
+
+.cart-view
+{
+  h1
+  {
+    color: #02416C;
+    margin: 0;
+    padding: 0;
+    font-size: 14pt;
+    font-weight: bold;
+    @media (min-width: @width-treshold) {
+      line-height: 33pt;
+    }
+  }
+  h2
+  {
+    color: #02416C;
+    margin: 0;
+    padding: 0;
+    font-size: 14pt;
+    font-weight: bold;
+  }
+  h4
+  {
+    color: #02416C;
+    font-size: 12pt;
+    font-weight: bold;
+    line-height: 18pt;
+    &.voucher
+    {
+      input
+      {
+        display: inline-block;
+        width: 150px;
+        @media (max-width: @width-treshold)
+        {
+          width: 100px;
+        }
+      }
+    }
+    &.summary
+    {
+      line-height: 0;
+      height: 15px;
+    }
+  }
+  hr
+  {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #D0D0D0;
+    margin: 0 10px;
+    padding: 0;
+    @media (min-width: @width-treshold) {
+      margin: 0 40px;
+    }
+  }
+  .text-bold
+  {
+    font-weight: bold;
+  }
+  .table
+  {
+    text-align: center;
+
+    h4
+    {
+      line-height: 0;
+      color: #437198;
+    }
+    td
+    {
+      vertical-align: middle;
+      h4
+      {
+        display: inline;
+      }
+    }
+  }
+  .hidden-lg
+  {
+    h4
+    {
+      &.summary
+      {
+        margin-left: 18px;
+      }
+    }
+  }
+  .row-striped
+  {
+    .row
+    {
+      &:nth-child(even)
+      {
+        background-color: #F2F2F2;
+      }
+      &:nth-child(odd)
+      {
+        background-color: #FFFFFF;
+      }
+    }
+
+  }
+  .shipping_header
+  {
+    background: #FF0000;
+    color: white;
+    white-space: nowrap;
+    .fa-caret-down
+    {
+      font-size: 20pt;
+    }
+    .bold
+    {
+      font-weight: bold;
+      line-height: 47px;
+    }
+  }
+  .cart-container
+  {
+    text-align: center;
+    margin: 1px;
+    padding: 1px;
+    @media (min-width: @width-treshold) {
+      margin: 5px;
+      padding: 5px;
+    }
+    .fa-caret-up
+    {
+      font-size: 18pt;
+    }
+    .fa-caret-down
+    {
+      font-size: 18pt;
+    }
+    .fa-times-circle
+    {
+      font-size: 18pt;
+    }
+    .hide-details
+    {
+      display: none;
+    }
+    .quantity
+    {
+      margin-top: 10px;
+      input
+      {
+        width: 55px;
+        margin-right: 10px;
+      }
+    }
+    .vertical-align
+    {
+      div
+      {
+        @media (max-width: @width-treshold) {
+          justify-content: initial!important;
+        }
+      }
+    }
+    .cart-item
+    {
+      margin-right: 0;
+      margin-left: 0;
+      margin-top: 10px;
+      padding-bottom: 10px;
+      img
+      {
+        width: 100px;
+      }
+      a
+      {
+        font-weight: bold;
+      }
+      input
+      {
+        width: 50px;
+      }
+      &:last-of-type
+      {
+        border-bottom: none;
+      }
+      .product-name
+      {
+        font-weight: bold;
+      }
+      .product-details
+      {
+        
+      }
+      .product-subtotal
+      {
+        font-weight: bold;
+        color: @om-dark-blue;
+        top: 7px;
+      }
+      .product-quantity
+      {
+        font-weight: bold;
+        color: @om-dark-blue;
+        top: 7px;
+      }
+    }
+    .header
+    {
+      color: #337ab7;
+    }
+  }
+  .cart-total
+  {
+    font-size: 16pt;
+    color: @om-dark-blue;
+    .text-right;
+    margin-right: 0;
+  }
+  .button
+  {
+    color: black;
+    .btn;
+    .btn-lg;
+    #gradient > .vertical(@om-light-orange, @om-dark-orange);
+  }
+  .btn-checkout
+  {
+    color: white;
+    text-shadow: 2px 2px #555555;
+    font-size: 14pt;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#43ac72+0,1eb462+1,0eb75b+2,02ba56+4,00b954+5,008638+98,158846+99,338c59+100 */
+    background: #43ac72; /* Old browsers */
+    background: -moz-linear-gradient(top,  #43ac72 0%, #1eb462 1%, #0eb75b 2%, #02ba56 4%, #00b954 5%, #008638 98%, #158846 99%, #338c59 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  #43ac72 0%,#1eb462 1%,#0eb75b 2%,#02ba56 4%,#00b954 5%,#008638 98%,#158846 99%,#338c59 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  #43ac72 0%,#1eb462 1%,#0eb75b 2%,#02ba56 4%,#00b954 5%,#008638 98%,#158846 99%,#338c59 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#43ac72', endColorstr='#338c59',GradientType=0 ); /* IE6-9 */
+
+  }
+  .btn-store
+  {
+    color: white;
+    font-weight: bold;
+    border-radius: inherit;
+    padding-left: 18px;
+    padding-right: 18px;
+
+
+    background: #3483b8; /* Old browsers */
+    background: -moz-linear-gradient(top, #3483b8 0%, #187dbe 4%, #1c7abc 8%, #1775b5 15%, #1b6aaa 31%, #2762a2 44%, #235492 66%, #1f4e8e 73%, #274a8a 79%, #1e4687 85%, #283b7f 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#3483b8), color-stop(4%,#187dbe), color-stop(8%,#1c7abc), color-stop(15%,#1775b5), color-stop(31%,#1b6aaa), color-stop(44%,#2762a2), color-stop(66%,#235492), color-stop(73%,#1f4e8e), color-stop(79%,#274a8a), color-stop(85%,#1e4687), color-stop(100%,#283b7f)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #3483b8 0%,#187dbe 4%,#1c7abc 8%,#1775b5 15%,#1b6aaa 31%,#2762a2 44%,#235492 66%,#1f4e8e 73%,#274a8a 79%,#1e4687 85%,#283b7f 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #3483b8 0%,#187dbe 4%,#1c7abc 8%,#1775b5 15%,#1b6aaa 31%,#2762a2 44%,#235492 66%,#1f4e8e 73%,#274a8a 79%,#1e4687 85%,#283b7f 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #3483b8 0%,#187dbe 4%,#1c7abc 8%,#1775b5 15%,#1b6aaa 31%,#2762a2 44%,#235492 66%,#1f4e8e 73%,#274a8a 79%,#1e4687 85%,#283b7f 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #3483b8 0%,#187dbe 4%,#1c7abc 8%,#1775b5 15%,#1b6aaa 31%,#2762a2 44%,#235492 66%,#1f4e8e 73%,#274a8a 79%,#1e4687 85%,#283b7f 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3483b8', endColorstr='#283b7f',GradientType=0 ); /* IE6-9 */
+    i
+    {
+      &.fa
+      {
+        font-size: 14pt;
+      }
+    }
+  }
+}

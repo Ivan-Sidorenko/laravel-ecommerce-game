@@ -1,0 +1,361 @@
+.products-view
+{
+  .section
+  {
+    border-bottom: 1px solid @om-light-gray;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+  }
+  
+  .full
+  {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  
+  h1
+  {
+    text-align: center;
+    color: @om-dark-blue;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#d3d3e1+3,ffffff+73 */
+    background: #d3d3e1; /* Old browsers */
+    background: -moz-linear-gradient(top,  #d3d3e1 3%, #ffffff 73%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(3%,#d3d3e1), color-stop(73%,#ffffff)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #d3d3e1 3%,#ffffff 73%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #d3d3e1 3%,#ffffff 73%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #d3d3e1 3%,#ffffff 73%); /* IE10+ */
+    background: linear-gradient(to bottom,  #d3d3e1 3%,#ffffff 73%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d3d3e1', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+    margin-top: 10px;
+    padding-top: 10px;
+  }
+  .rating
+  {
+    .row;
+    font-size: 12px;
+    .bar
+    {
+      .make-xs-column(7);
+      margin-left: 10px;
+      margin-top: 17px;
+      margin-bottom: 0px;
+      .progress-bar
+      {
+        .om-progress-primary;
+      }
+    }
+    .display
+    {
+      .make-xs-column(5);
+      margin-left: -10px;
+      .text-center;
+      .percentage
+      {
+        font-size: 22px;
+        color: @om-dark-blue;
+        font-weight: bold;
+        
+      }
+    }
+  }
+  .product-detail
+  {
+    .row;
+    .image
+    {
+      .make-xs-column(5);
+    }
+    .selectors
+    {
+      .make-xs-column(7);
+    }
+  }
+
+  .cart
+  {
+    margin-top: 20px;
+    .row;
+    .text-center;
+    a
+    {
+      color: black;
+    }
+    .button
+    {
+      .btn;
+      .btn-lg;
+      #gradient > .vertical(@om-light-orange, @om-dark-orange);
+    }
+  }
+  
+  .reviews
+  {
+    .full;
+    .panel
+    {
+      border: none;
+    }
+    .panel-title
+    {
+      color: white;
+      font-weight: bold;
+    }
+    .panel-heading
+    {
+      background-color: #1898D5;
+      border-radius: 0px;
+      margin-bottom: 5px;
+    }
+    .panel-body
+    {
+      .banner
+      {
+        background-color: red;
+        color: white;
+        padding: 5px;
+        margin-bottom: 10px;
+        margin-left: -15px;
+        margin-right: -15px;
+      }
+      .overall-rating
+      {
+        font-weight: bold;
+        margin-bottom: 10px;
+        .progress-bar
+        {
+          .om-progress-primary;
+        }
+      }
+      .taste-ratings
+      {
+        font-weight: bold;
+        .taste-rating
+        {
+          float: left;
+          width: 50%;
+          padding: 10px;
+          .progress-bar
+          {
+            .om-progress-secondary;
+          }
+        }
+      }
+    }
+    .carousel-control
+    {
+      color: @om-light-gray;
+      background-image: none;
+    }
+    .review-rating
+    {
+      .icon
+      {
+        .text-center;
+      }
+      .score
+      {
+        .text-center;
+        font-size: 30pt;
+        color: @om-dark-blue;
+      }
+      .progress-bar
+      {
+        .om-progress-primary;
+      }
+      .member-count
+      {
+        .text-center;
+        font-size: 10px;
+      }      
+    }
+    
+    .carousel-content
+    {
+      margin-left: 40px;
+      margin-right: 40px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      
+      .title
+      {
+        color: #666666;
+        font-size: 15pt;
+        .text-center;
+      }
+
+      .logos
+      {
+        .text-center;
+        img
+        {
+          display: inline-block;
+          width: 130px;
+        }
+      }
+    }
+    
+    #carousel-taste-flavor
+    {
+      .item
+      {
+        min-height: 440px;
+        max-height: 440px;
+        overflow: auto;
+        .flavor
+        {
+          .carousel-content;
+        }
+    
+        .mixability
+        {
+          .text-center;
+          .carousel-content;
+          font-weight: bold;
+          .gauge
+          {
+            width: 200px;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+          }
+      
+        }
+        .tf-description
+        {
+          .carousel-content;
+          max-height: 400px;
+          overflow: auto;
+        }
+      }
+      
+
+    }
+    
+    .review
+    {
+      .clearfix;
+      border: 1px solid #E4E4E4;
+      border-radius: 3px;
+      margin-left: -10px;
+      margin-right: -10px;
+      margin-bottom: 10px;
+      
+      padding: 5px;
+      .header
+      {
+        .row;
+        .title
+        {
+          .make-xs-column(6);
+          .text-center;
+          font-size: 15pt;
+          color: @om-dark-blue;
+          position: relative;
+          top: 11px;
+        }
+        .image
+        {
+          .make-xs-column(3);
+          .text-center;
+        }
+        .profile
+        {
+          .make-xs-column(3);
+          .text-center;
+          .byline
+          {
+            font-size: 10px;
+          }
+        }
+        
+      }
+      .rating
+      {
+        margin-bottom: 5px;
+        .title
+        {
+          .text-center;
+          
+        }
+        .progress
+        {
+          margin-top: 0px;
+        }
+        .percentage
+        {
+          color: @om-dark-blue;
+          font-size: 15px;
+          font-weight: bold;
+        }
+      }
+    }
+    .user-review
+    {
+      .input
+      {
+        .point
+        {
+          margin-bottom: 10px;
+          .question
+          {
+            font-size: 12px;
+          }
+          &.inline
+          {
+            .row;
+            .question
+            {
+              .make-xs-column(5);
+            }
+            .answer
+            {
+              .make-xs-column(7);
+            }
+          }
+          &.vertical
+          {
+            .question
+            {
+              .make-row(0);
+            }
+            .answer
+            {
+              .make-row(0);
+              margin-bottom: 5px;
+            }
+            .submit
+            {
+              .make-row(0);
+            }
+          }
+        }
+      }
+      margin-top: 10px;
+      .title
+      {
+        color: white;
+        font-weight: bold;
+        padding: 5px;
+        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#095880+0,386396+51,125a84+100 */
+        background: #095880; /* Old browsers */
+        background: -moz-linear-gradient(top, #095880 0%, #386396 51%, #125a84 100%); /* FF3.6+ */
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#095880), color-stop(51%,#386396), color-stop(100%,#125a84)); /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(top, #095880 0%,#386396 51%,#125a84 100%); /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(top, #095880 0%,#386396 51%,#125a84 100%); /* Opera 11.10+ */
+        background: -ms-linear-gradient(top, #095880 0%,#386396 51%,#125a84 100%); /* IE10+ */
+        background: linear-gradient(to bottom, #095880 0%,#386396 51%,#125a84 100%); /* W3C */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#095880', endColorstr='#125a84',GradientType=0 ); /* IE6-9 */        
+      }
+      .banner
+      {
+        background-color: #494681;
+      }
+      .slider-selection {
+      	background: #BABABA;
+      }
+    }
+  }
+}

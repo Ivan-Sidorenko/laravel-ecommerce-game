@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Notes for the PHP Integration Kit</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <style type="text/css">
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 16px;
+                color:  #666666;
+                margin: 10px auto 20px auto;
+                width: 960px;
+            }
+            a:link, a:visited {
+                color:  #666666;
+                border: none;
+            }
+            img {
+                border: none;
+            }
+            h2 {
+                color:#007F64;
+                font-weight: bold;
+                font-size:22px;
+                padding-bottom: 14px;
+            }
+            h3 {
+                background-image: url(images/yellowBlob.png);
+                background-repeat: no-repeat;
+                background-position: 0px 22px;
+                padding: 20px 0px 8px;
+                font-size: 18px;
+                color: #E98300;
+            }
+            h5 {
+                color: #E98300;
+                font-size: 16px;
+                margin: 5px 0;
+            }
+            p {
+                line-height: 1.4em;
+            }
+            li {
+                margin: 10px 0;
+            }
+            #pageHeader {
+                padding: 20px 20px 20px 20px;
+                height: 40px;
+            }
+            dl {
+                margin: 0 0 20px;
+            }
+            dt {
+                font-weight: bold;
+            }
+        </style>
+
+    </head>
+    <body>
+        <div id="pageHeader">
+            <a href="./"><img src="assets/images/sage_pay_logo.gif" style="float:left;" alt="Sage Pay" /></a>
+            <img src="assets/images/title.png" style="float:right;" alt="PHP Integration Kit" />
+        </div>
+        <h2>Notes for the PHP Integration Kit</h2>
+
+        <ul>
+            <li><a href="#0">DISCLAIMER</a></li>
+            <li><a href="#1">INTRODUCTION</a></li>
+            <li><a href="#2">REQUIREMENTS</a></li>
+            <li><a href="#3">INSTALLATION</a></li>
+            <li><a href="#5">TESTING THE KIT</a></li>
+            <li><a href="#6">MODIFYING THE KIT</a></li>
+            <li><a href="#7">CONFIGURATION DETAILS</a></li>
+            <li><a href="#8">RELATED DOCUMENTATION</a></li>
+        </ul>
+
+
+        <h3 id="0">DISCLAIMER</h3>
+        <p>
+            This integration kit is provided to you to assist you with integrating with our services. We are under no obligation to provide
+            integration kits and so we provide these to you on an “as is” free of charge basis. By using this integration kit you agree that it is your
+            responsibility to check its accuracy and its suitability for your own particular requirements when integrating with our services (including
+            determining whether this is the best and most secure way of integrating your systems with our service). Accordingly, you agree that any use of this
+            integration kit and protocol is at your own risk and we are not liable for any omissions, errors or inaccuracies in it or in relation to how you
+            choose to integrate with our service.
+        </p>
+        <p>
+            We generally recommend that you always try to use our most up to date protocols, algorithms, settings and guidance when integrating with our
+            services but, as stated above, you are best placed to understand the most suitable way of integrating your systems with our service and it is your
+            responsibility to decide how you do it and what is most appropriate for your needs. If we continue to make older protocols and algorithms available
+            to you these will not be supported by us and your continued use of such protocols is also entirely at your own risk.
+        </p>
+
+
+        <h3 id="1">INTRODUCTION</h3>
+        <p>Contents:</p>
+        <ul>
+            <li>
+                <h4>Sage Pay PHP Integration Kit</h4>
+                <p>
+                    The archive contains a full set of classes for building an application that use Sage Pay’s services. It can be found in <i>root/lib</i> folder. It
+                    provides API methods to validate, process payments, refunds etc. without having deal with cURL requests directly.
+                </p>
+            </li>
+            <li>
+                <h4>Demonstration Web Application </h4>
+                <p>
+                    A simple web application to demonstrate to developers how to use the Sage Pay PHP Integration Kit. It shows how to take payments with each of available
+                    Sage Pay integration methods (Form, Server and Direct). To avoid depending on any particular framework or CMS, the application is a simple
+                    PHP web application. Please note that the application is for tutorial purposes and is not intended to be a template for production ready
+                    code. For example, the application deliberately displays logs containing potentially sensitive information. To keep the example code simple it does not
+                    include the type of robust error handling you may need in production.
+                </p>
+              </li>
+            <li>
+                <h4>Full Integration Kit Documentation</h4>
+                <p>
+                    This package also contain the complete documentation of all classes and methods of Sage Pay PHP Integration Kit. This will help you to easily find any
+                    method that you need. Additional comments on functionality have been included inside the source code of the integration kit.
+                </p>
+            </li>
+        </ul>
+
+        <h3 id="2">REQUIREMENTS</h3>
+        <ul>
+            <li>
+                <h4>PHP 5.3 or later</h4>
+                <p>
+                    This application and SDK require PHP 5.3 or later.
+                </p>
+            </li>
+            <li>
+                <h4>Encryption</h4>
+                <p>
+                    This kit uses standard PHP mcrypt encryption extension to encrypt information posted to the Sage Pay Gateway.
+                </p>
+            </li>
+            <li>
+                <h4>Database</h4>
+                <p>
+                    The application uses MySQL as its database management system. <br>
+                    This release of the kit has been developed and tested using
+                    <a href="http://dev.mysql.com/downloads/mysql" target="_blank">MySQL Community Server 5.6</a> (click link for the download site).
+                </p>
+            </li>
+            <li>
+                <h4>Apache mod_rewrite</h4>
+                <p> The mod_rewrite module is required for Apache Server to work properly.</p>
+            </li>
+        </ul>
+
+        <h3 id="3">INSTALLATION</h3>
+        <ul>
+            <li>
+                Install and configure Apache Server. Depending on your operating system, follow the steps listed below.
+                <ul>
+                    <li>
+                        <h4>Windows</h4>
+                        <ul>
+                            <li>
+                                Download and install <a href="https://www.apachefriends.org/index.html">XAMMP</a>. (Tested on XAMPP 1.8.3)
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h4>Ubuntu (Tested on 12.04 LTS)</h4>
+                        <ul>
+                            <li>sudo apt-get update</li>
+                            <li>sudo apt-get install apache2 php5 php5-mcrypt php5-curl php5-mysql libapache2-mod-php5</li>
+                            <li>sudo a2enmod rewrite</li>
+                            <li>sudo service apache2 restart</li>
+                            <li>Install MySQL Server (sudo apt-get install mysql-server) </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h4>Other</h4>
+                        <ul>
+                            <li>
+                                <p>
+                                    Install <b>Apache Server</b>, for details about how to install click <a href="http://httpd.apache.org/docs/2.4/">here</a>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    Install <b>PHP</b>, for details about how to install click <a href="http://www.php.net/manual/en/install.windows.php">here</a>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    Install <b>MySQL Server</b>, for details about how to install click
+                                    <a href="http://dev.mysql.com/doc/refman/5.6/en/windows-installation.html">here</a>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    Enable the <b>mod_rewrite</b> for Apache<br>
+
+                                </p>
+                                <p>
+                                    Open <i>httpd.conf</i> (which is situated in <i>YOUR_APACHE_DIR/conf</i>) with the text editor and uncomment line
+                                    <q>LoadModule rewrite_module modules/mod_rewrite.so</q> by removing <b>#</b> in front of this line.
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    Ensure that follow list of PHP extensions are enabled:
+                                </p>
+                                <ul>
+                                    <li><b>mcrypt extension</b></li>
+                                    <li><b>cURL library</b></li>
+                                    <li><b>PDO extension</b></li>
+                                    <li><b>mysql extension</b></li>
+                                    <li><b>JSON extension</b></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <p>
+                    Extract the <b>.zip file</b> and copy it to your application server's web applications directory.
+                    </br>
+                    "C:\xampp\htdocs" for Windows and "/var/www" for Ubuntu.
+                </p>
+            </li>
+            <li>
+                <p>
+                    You need to create the database tables that SERVER and DIRECT integration relies on.
+                </p>
+                <ol>
+                    <li>
+                        Create the database in MySQL:
+                        <pre>CREATE DATABASE `databasename`
+DEFAULT CHARACTER SET `utf8`
+COLLATE `utf8_general_ci`;</pre>
+                    </li>
+                    <li>
+                        Create a user in your MySQL database:
+                        <pre>CREATE USER 'username'@'servername'
+IDENTIFIED BY 'password';</pre>
+                    </li>
+                    <li>
+                        Add privileges for created user:
+                        <pre>GRANT ALL PRIVILEGES ON `databasename`.*
+TO 'username'@'servername';</pre>
+                    </li>
+                    <li>
+                        Set default database for current session:
+                        <pre>USE `databasename`;</pre>
+                    </li>
+                    <li>
+                        Import SQL query to database:
+                        <pre>SOURCE &lt;installation dir&gt;/demo/sagepay.sql</pre>
+                    </li>
+                </ol>
+                <p>
+                    where <i>databasename</i>, <i>username</i>, <i>password</i>, <i>servername</i> and <i>import_filepath</i>
+                    are your database, username, password, servername and path to import SQL file (from <i>root/demo</i> folder).
+                </p>
+            </li>
+            <li>
+                <p>
+                    Edit the <i>root/demo/config.php</i> configuration file supplied with the web application to setup your database connection details
+                    (hostname, username, password, database name provided above).
+                </p>
+            </li>
+            <li>
+                <p>
+                    Edit the <i>root/lib/config.php</i> configuration file to setup your unique vendor and system details. For more details <a href="#7" title="CONFIGURATION DETAILS">click here</a>
+                </p>
+            </li>
+        </ul>
+
+        <h3 id="5">TESTING THE KIT</h3>
+        <ul>
+            <li>
+                <p>
+                    Open a browser and go to the index page <i>http://YOUR_SERVER_NAME/<b>demo</b>/</i>, where
+                    the bold path is the name you have deployed the web application under, by default "demo").
+                </p>
+            </li>
+            <li>
+                <p>
+                    You should see a welcome page containing links to browse examples of the different integration methods.
+                </p>
+            </li>
+            <li>
+                <p>
+                    If not, it is likely the application has not been deployed correctly and you should check your server settings or database.
+                </p>
+            </li>
+            <li>
+                <p>
+                    The application's web pages themselves contain descriptions of how the APIs work and how to proceed at each step, as well as documentation
+                    within the PHP source code which is supplied.
+                </p>
+            </li>
+            <li>
+                <p>
+                    By default the application using TEST environment, for this you will need to use a test account provided by Sage Pay. Using our Test environment you will see the true user experience as this is identical to the LIVE systems, but without bank connections.
+                </p>
+            </li>
+        </ul>
+
+        <h3 id="6">MODIFYING THE KIT</h3>
+        <ul>
+            <li>
+                <p>
+                    You are free to use and modify the kits as little or as much as you like. Sage Pay support will be able to advise you how to link your web
+                    site with Sage Pay, and hopefully the example code in this kit will simplify the process for you.
+                </p>
+            </li>
+            <li>
+                <p>
+                    As each web-site implementation is different our support teams can help you with the standard, unmodified kit,
+                    we cannot support the pages after you've made changes to them. We will, of course, advise as best we can and will do our best to help make
+                    the integration as uncomplicated as possible.
+                </p>
+            </li>
+            <li>
+                <p>
+                    If you are not comfortable with coding your own website, or find the kits beyond your level of comfort, we can help by providing a list of
+                    integration partners with whom we work, who have a good knowledge of our system and can help with your integration. Please visit
+                    <a href="https://www.sagepay.co.uk/partner-programme-enquiries" target="_blank">https://www.sagepay.co.uk/partner-programme-enquiries</a>
+                    to search for a relevant partner.
+                </p>
+            </li>
+        </ul>
+
+        <h3 id="7">CONFIGURATION DETAILS</h3>
+        <p>
+            The following is a short description of all the properties in configuration file.
+            Please note that properties can differ when using the live and test environment.
+            Mandatory Properties: Must have a value provided<br />
+            Optional Properties: May or may not have a value
+        </p>
+        <h5>COMMON Settings (All Protocols)</h5>
+        <dl>
+            <dt>env</dt>
+            <dd>
+                <p>
+                    <b>Mandatory.</b><br />
+                    Environment variable<br />
+                    Specify 'test' or 'live' to indicate which Sage Pay environment you wish to communicate with.<br />
+                    Default: <code>test</code>
+                </p>
+            </dd>
+
+            <dt>protocolVersion</dt>
+            <dd>
+                <p>
+                    <b>Mandatory.</b><br />
+                    SagePay Protocol Version used for payment<br />
+                    Example: <br />
+                    <code>3.00</code><br />
+                    <code>2.23</code><br />
+                    Default: <code>3.00</code>
+                </p>
+            </dd>
+
+            <dt>vendorName</dt>
+            <dd>
+                <p>
+                    <b>Mandatory.</b><br />
+                    Set this value to the Vendor Name assigned to you by Sage Pay
+                </p>
+            </dd>
+
+            <dt>currency</dt>
+            <dd>
+                <p>
+                    <b>Mandatory.</b><br />
+                    Set this to indicate the currency in which you wish to trade. 
+                    You will need a merchant number in this currency. NOTE: Use ISO4217 standard<br />
+                    Default: <code>GBP</code>
+                </p>
+            </dd>
+
+            <dt>txType</dt>
+            <dd>
+                <p>
+                    <b>Mandatory.</b><br />
+                    Usually PAYMENT. This can be DEFERRED or AUTHENTICATE if your Sage Pay 
+                    account supports those payment types.<br />
+                    Default: <code>PAYMENT</code>
+                </p>
+            </dd>
+
+            <dt>siteFqdns</dt>
+            <dd>
+                <p>
+                    <b>Mandatory.</b><br />
+                    It's recommended to set the siteFqdn value to the Fully Qualified Domain Name of your server. <br />
+                    This should start <i>http://</i> or <i>https://</i> and should be the name by which our servers can call back to yours <br />
+                    It MUST be resolvable externally, and have access granted to the Sage Pay servers<br />
+                    NOTE: <i>You should leave the trailing / in place.</i><br />
+                    Example: <br />
+                    <code>https://www.mysite.com/demo/</code><br />
+                    <code>http://212.111.32.22/</code><br />
+                </p>
+            </dd>
+
+            <dt>applyAvsCv2</dt>
+            <dd>
+                <p>
+                    <b>Mandatory.</b><br />
+                    Apply Address Verification Status / Card Verification Value<br />
+                    0 = If AVS/CV2 enabled then check them. If rules apply, use rules.<br />
+                    1 = Force AVS/CV2 checks even if not enabled for the account. If rules apply, use rules.<br />
+                    2 = Force NO AVS/CV2 checks even if enabled on account.<br />
+                    3 = Force AVS/CV2 checks even if not enabled for the account but DON'T apply any rules.<br />
+                    Default: <code>0</code>
+                </p>
+            </dd>
+
+            <dt>apply3dSecure</dt>
+            <dd>
+                <p>
+                    <b>Mandatory.</b><br />
+                    Apply 3D-Secure<br />
+                    0 = If 3D-Secure checks are possible and rules allow, perform the checks and apply the authorisation rules.<br />
+                    1 = Force 3D-Secure checks for this transaction if possible and apply rules for authorisation.<br />
+                    2 = Do not perform 3D-Secure checks for this transaction and always authorise.<br />
+                    3 = Force 3D-Secure checks for this transaction if possible but ALWAYS obtain an auth code, irrespective of rule base.<br />
+                    Default: <code>0</code>
+                </p>
+            </dd>
+
+            <dt>partnerId</dt>
+            <dd>
+                <p>
+                    <b>Optional.</b><br />
+                    If you are a Sage Pay Partner and wish to flag the transactions with your unique partner id, it should be set here
+                </p>
+            </dd>
+
+            <dt>allowGiftAid</dt>
+            <dd>
+                <p>
+                    <b>Optional.</b><br />
+                    For charities registered for Gift Aid, set to 1 to display the Gift Aid check box on the payment pages, or else 0<br />
+                    (Server & Form protocols only)<br />
+                    Default: <code>0</code>
+                </p>
+            </dd>
+
+            <dt>surcharges</dt>
+            <dd>
+                <p>
+                    <b>Optional.</b><br />
+                    Use this to send surcharge XML and override the default values set for your account. You can set a list of surcharges for different card types.<br />
+                    See the protocol documents for further explanation on using the surcharge XML.<br />
+                    Example: <br />
+                    <code>array('paymentType' => 'AMEX', 'percentage' => 5)</code><br />
+                    <code>array('paymentType' => 'VISA', 'fixed' => 5)</code>
+                </p>
+            </dd>
+
+            <dt>collectRecipientDetails</dt>
+            <dd>
+                <p>
+                    <b>Optional.</b><br />
+                    If you are a financial institution then you need to collect details about the account/card the payment is for (true/false)<br />
+                    Default: <code>false</code>
+                </p>
+            </dd>
+
+            <dt>vendorData</dt>
+            <dd>
+                <p>
+                    <b>Optional.</b><br />
+                    Use this to pass data you wish to be displayed against the transaction in MySagePay. (max. 200 chars)
+                </p>
+            </dd>
+
+            <dt>language</dt>
+            <dd>
+                <p>
+                    <b>Optional.</b><br />
+                    The language the customer sees the payment pages in is determined by the code sent here. <br />
+                    If this is NULL then the language default of the shoppers browser will be used.<br />
+                    If the language is not supported then the language supported in the templates will be used. <br />
+                    Currently supported languages in the Default templates are: French, German, Spanish, Italian, Portuguese, Dutch and English<br />
+                    NOTE: <i>Use ISO639 standard</i>
+                </p>
+            </dd>
+
+            <dt>website</dt>
+            <dd>
+                <p>
+                    <b>Optional.</b><br />
+                    Reference to the website this transaction came from. This field is useful if transactions can originate from more than one website.<br />
+                    Supplying this information will enable reporting to be performed by website.
+                </p>
+            </dd>
+        </dl>
+
+        <h5>FORM Protocol Only Settings </h5>
+        <p>You only need configure this section if you are using FORM Integration.</p>
+        <dl>
+            <dt>formPassword</dt>
+            <dd>
+                <p>
+                    <b>Mandatory.</b><br />
+                    Set this value to the AES encryption password assigned to you by Sage Pay 
+                </p>
+            </dd>
+
+            <dt>formSuccessUrl</dt>
+            <dd>
+                <p>
+                    <b>Optional.</b><br />
+                    Set this value to the fully qualified URL you wish to be displayed for successful transactions
+                </p>
+            </dd>
+
+            <dt>formFailureUrl</dt>
+            <dd>
+                <p>
+                    <b>Optional.</b><br />
+                    Set this value to the fully qualified URL you wish to be displayed for failed transactions
+                </p>
+            </dd>
+
+            <dt>sendEmail</dt>
+            <dd>
+                <p>
+                    <b>Optional.</b><br />
+                    0 = Do not send either customer or vendor e-mails.<br />
+                    1 = Send customer and vendor e-mails if address(es) are provided.<br />
+                    2 = Send Vendor Email but not Customer Email.<br />
+                    If you do not supply this field, 1 is assumed and e-mails are sent if addresses are provided.<br />
+                    Default: <code>1</code>
+                </p>
+            </dd>
+
+            <dt>vendorEmail</dt>
+            <dd>
+                <p>
+                    <b>Optional.</b><br />
+                    Set this to the email address which will receive order confirmations and failures
+                </p>
+            </dd>
+
+            <dt>emailMessage</dt>
+            <dd>
+                <p>
+                    <b>Optional.</b><br />
+                    Contents of email message.<br />
+                    You can specify any custom message to send to your customers in their confirmation e-mail here<br />
+                    The field can contain HTML if you wish, and be different for each order.<br />
+                    Default: <code>Thanks for your order</code>
+                </p>
+            </dd>
+        </dl>
+
+        <h5>SERVER & DIRECT Protocols Only Settings</h5>
+        <p>You only need configure this section if you are using DIRECT or SERVER Integration.</p>
+        <dl>
+            <dt>billingAgreement</dt>
+            <dd>
+                <p>
+                    <b>Mandatory.</b><br />
+                    This value will be used to set the BillingAgreement field in the registration POST<br />
+                    Default: <code>0</code>
+                </p>
+            </dd>
+
+            <dt>accountType</dt>
+            <dd>
+                <p>
+                    <b>Optional.</b><br />
+                    Tell the SAGE PAY System which merchant account to use.<br />
+                    If omitted, the system will use E, then M, then C by default. <br />
+                    E = Use the e-commerce merchant account (default).<br />
+                    C = Use the continuous authority merchant account (if present).<br />
+                    M = Use the mail
+                </p>
+            </dd>
+
+            <dt>customerPasswordSalt</dt>
+            <dd>
+                <p>
+                    <b>Optional.</b><br />                    
+                    Any 7 character salt for the local customer password database used by the kit.<br />
+                    NOTE: <i>The kit is for demonstration purposes only - your own website should take proper security measures.</i>
+                </p>
+            </dd>
+
+            <dt>requestTimeout</dt>
+            <dd>
+                <p>
+                    <b>Optional.</b><br />
+                    The maximum number of seconds to allow cURL functions to execute.<br />
+                    Default: <code>30</code>
+                </p>
+            </dd>
+
+            <dt>caCertPath</dt>
+            <dd>
+                <p>
+                    <b>Optional.</b><br />
+                    The name of a file holding one or more certificates to verify the peer with.
+                </p>
+            </dd>
+        </dl>
+
+        <h5>SERVER Protocol Only Settings </h5>
+        <p>You only need configure this section if you are using SERVER Integration.</p>
+        <dl>
+            <dt>serverNotificationUrl</dt>
+            <dd>
+                <p>
+                    <b>Optional.</b><br />
+                    Callback URL to which Notification POSTs are sent
+                </p>
+            </dd>
+
+            <dt>serverProfile</dt>
+            <dd>
+                <p>
+                    <b>Optional.</b><br />
+                    Defines how the Sage Pay Server payment pages will be displayed<br />
+                    Default: <code>NORMAL</code>
+                </p>
+            </dd>
+        </dl>
+
+        <h5>DIRECT Protocol Only Settings </h5>
+        <p>You only need configure this section if you are using DIRECT Integration.</p>
+        <dl>
+
+            <dt>paypalCallbackUrl</dt>
+            <dd>
+                <p>
+                    <b>Optional.</b><br />
+                    Fully qualified domain name of the URL to which customers are redirected upon completion of a PayPal transaction.<br />
+                    NOTE: <i>Must begin http:// or https:// Only required if the CardType=PAYPAL.</i>
+                </p>
+            </dd>
+        </dl>
+
+        <h5>Integration Kit Advanced Settings</h5>
+        <p>Editing of this section is not usually required.</p>
+        <dl>
+            <dt>basketAsXmlDisable</dt>
+            <dd>
+                <p>
+                    <b>Optional.</b><br />
+                    Set this to true to use colon delimited format for the basket instead of XML<br />
+                    NOTE: <i>The 'Extra Information' page will not be displayed if this flag is set to true. This will prevent
+                        users entering Trip information</i><br />
+                    Default: <code>false</code>
+                </p>
+            </dd>
+
+            <dt>logError</dt>
+            <dd>
+                <p>
+                    <b>Optional.</b><br />
+                    If it is true, all logs will be stored in debug.log<br />
+                    Default: <code>false</code>                    
+                </p>
+            </dd>
+
+            <dt>purchaseUrls</dt>
+            <dd>
+                <p>
+                    <b>Optional.</b><br />
+                    List of Purchase URLs used for Registration Transaction
+                </p>
+            </dd>
+
+            <dt>sharedUrls</dt>
+            <dd>
+                <p>
+                    <b>Optional.</b><br />
+                    List of Shared URLs used for admin panel actions
+                </p>
+            </dd>
+
+            <dt>tokenUrls</dt>
+            <dd>
+                <p>
+                    <b>Optional.</b><br />
+                    List of Token URLs used for store/remove token
+                </p>
+            </dd>
+        </dl>
+
+
+        <h3 id="8">RELATED DOCUMENTATION</h3>
+        <p></p>
+
+        <ul>
+            <li>
+                <a href="http://www.sagepay.com/help/userguides/586" target="_blank">
+                    Sage Pay Form Protocol and Integration Guideline
+                </a>
+            </li>
+            <li>
+                <a href="http://www.sagepay.com/help/userguides/589" target="_blank">
+                    Sage Pay Server Protocol and Integration Guideline
+                </a>
+            </li>
+            <li>
+                <a href="http://www.sagepay.com/help/userguides/590" target="_blank">
+                    Sage Pay Direct Protocol and Integration Guideline
+                </a>
+            </li>
+            <li>
+                <a href="http://www.sagepay.com/help/userguides/592" target="_blank">
+                    Sage Pay Server and Direct Shared Protocols
+                </a>
+            </li>
+            <li>
+                <a href="http://www.sagepay.com/help/userguides/6338" target="_blank">
+                    My Sage Pay User Manual
+                </a>
+            </li>
+            <li>
+                <a href="http://www.sagepay.com/help/userguides/573" target="_blank">
+                    How to Prevent Fraud
+                </a>
+            </li>
+        </ul>
+    </body>
+</html>

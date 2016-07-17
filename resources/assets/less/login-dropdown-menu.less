@@ -1,0 +1,146 @@
+.icons
+{
+  .dropdown
+  {
+    display: inline-block;
+  }
+}
+.dropdown-menu
+{
+  &.account
+  {
+    width: 300px;
+    color: #000000;
+    left: -206px;
+    @media (max-width: 320px)
+    {
+      left:-179px;
+    }
+    .nav-tabs
+    {
+      border: none;
+
+      li
+      {
+        width: 50%;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 0;
+
+        a
+        {
+          border: none;
+          border-radius: inherit;
+        }
+
+        &.active
+        a
+        {
+          border: none;
+          &:hover
+          {
+            border: none;
+          }
+          &:focus
+          {
+            border: none;
+          }
+        }
+
+      }
+      li:first-child
+      {
+        padding-right:20px;
+        border-right: 1px solid #ccc;
+      }
+    }
+    .social-icons
+    {
+      text-align: center;
+      a
+      {
+        &.fa
+        {
+          font-size: 40px;
+          display: inline-block;
+          width: 50px;
+          padding: 3px;
+          color: white;
+          margin-left: 7px;
+        }
+      }
+    }
+    button
+    {
+      font-weight: bold;
+      border-radius: inherit;
+      padding-left: 18px;
+      padding-right: 18px;
+
+      background: #3483b8; /* Old browsers */
+      background: -moz-linear-gradient(top, #3483b8 0%, #187dbe 4%, #1c7abc 8%, #1775b5 15%, #1b6aaa 31%, #2762a2 44%, #235492 66%, #1f4e8e 73%, #274a8a 79%, #1e4687 85%, #283b7f 100%); /* FF3.6+ */
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#3483b8), color-stop(4%,#187dbe), color-stop(8%,#1c7abc), color-stop(15%,#1775b5), color-stop(31%,#1b6aaa), color-stop(44%,#2762a2), color-stop(66%,#235492), color-stop(73%,#1f4e8e), color-stop(79%,#274a8a), color-stop(85%,#1e4687), color-stop(100%,#283b7f)); /* Chrome,Safari4+ */
+      background: -webkit-linear-gradient(top, #3483b8 0%,#187dbe 4%,#1c7abc 8%,#1775b5 15%,#1b6aaa 31%,#2762a2 44%,#235492 66%,#1f4e8e 73%,#274a8a 79%,#1e4687 85%,#283b7f 100%); /* Chrome10+,Safari5.1+ */
+      background: -o-linear-gradient(top, #3483b8 0%,#187dbe 4%,#1c7abc 8%,#1775b5 15%,#1b6aaa 31%,#2762a2 44%,#235492 66%,#1f4e8e 73%,#274a8a 79%,#1e4687 85%,#283b7f 100%); /* Opera 11.10+ */
+      background: -ms-linear-gradient(top, #3483b8 0%,#187dbe 4%,#1c7abc 8%,#1775b5 15%,#1b6aaa 31%,#2762a2 44%,#235492 66%,#1f4e8e 73%,#274a8a 79%,#1e4687 85%,#283b7f 100%); /* IE10+ */
+      background: linear-gradient(to bottom, #3483b8 0%,#187dbe 4%,#1c7abc 8%,#1775b5 15%,#1b6aaa 31%,#2762a2 44%,#235492 66%,#1f4e8e 73%,#274a8a 79%,#1e4687 85%,#283b7f 100%); /* W3C */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3483b8', endColorstr='#283b7f',GradientType=0 ); /* IE6-9 */
+    }
+    .panel-footer
+    {
+      margin: 0 -15px 0 -15px;
+    }
+    &:before
+    {
+      left:218px;
+      @media (max-width: 320px)
+      {
+        left:188px;
+      }
+    }
+    &:after
+    {
+      left:218px;
+      @media (max-width: 320px)
+      {
+        left:188px;
+        top:-8px;
+      }
+    }
+  }
+
+  .nav;
+    li
+      a
+      {
+        &:hover
+        {
+          background-color: transparent;
+          border: none;
+        }
+        &:focus
+        {
+          background-color: transparent;
+          border: none;
+        }
+      }
+}
+header
+{
+  .row
+  {
+    &.first
+    {
+      .icons
+      {
+        .icon
+        {
+          @media (max-width: 320px)
+          {
+            font-size: 6pt;
+          }
+        }
+      }
+    }
+  }
+}
